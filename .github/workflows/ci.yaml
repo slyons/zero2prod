@@ -28,6 +28,7 @@ jobs:
     env:
       SQLX_VERSION: 0.6.2
       SQLX_FEATURES: postgres,runtime-tokio-rustls,migrate
+      SQLX_FEATURES_KEY: postgres:runtime-tokio-rustls:migrate
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -53,7 +54,7 @@ jobs:
         with:
           path: |
             ~/.cargo/bin/sqlx
-          key: ${{ runner.os }}-sqlx-${{ env.SQLX_VERSION }}-${{ env.SQLX_FEATURES }}
+          key: ${{ runner.os }}-sqlx-${{ env.SQLX_VERSION }}-${{ env.SQLX_FEATURES_KEY }}
 
       - name: Install sqlx-cli
         uses: actions-rs/cargo@v1
@@ -109,6 +110,7 @@ jobs:
     env:
       SQLX_VERSION: 0.6.2
       SQLX_FEATURES: postgres,runtime-tokio-rustls,migrate
+      SQLX_FEATURES_KEY: postgres:runtime-tokio-rustls:migrate
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -126,7 +128,7 @@ jobs:
         with:
           path: |
             ~/.cargo/bin/sqlx
-          key: ${{ runner.os }}-sqlx-${{ env.SQLX_VERSION }}-${{ env.SQLX_FEATURES }}
+          key: ${{ runner.os }}-sqlx-${{ env.SQLX_VERSION }}-${{ env.SQLX_FEATURES_KEY }}
 
       - name: Install sqlx-cli
         uses: actions-rs/cargo@v1
@@ -165,6 +167,7 @@ jobs:
     env:
       SQLX_VERSION: 0.6.2
       SQLX_FEATURES: postgres,runtime-tokio-rustls,migrate
+      SQLX_FEATURES_KEY: postgres:runtime-tokio-rustls:migrate
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -181,7 +184,7 @@ jobs:
         with:
           path: |
             ~/.cargo/bin/sqlx
-          key: ${{ runner.os }}-sqlx-${{ env.SQLX_VERSION }}-${{ env.SQLX_FEATURES }}
+          key: ${{ runner.os }}-sqlx-${{ env.SQLX_VERSION }}-${{ env.SQLX_FEATURES_KEY }}
 
       - name: Install sqlx-cli
         uses: actions-rs/cargo@v1
