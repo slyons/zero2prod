@@ -27,7 +27,7 @@ jobs:
           - 5432:5432
     env:
       SQLX_VERSION: 0.6.2
-      SQLX_FEATURES: postgres
+      SQLX_FEATURES: postgres,runtime-tokio-rustls,migrate
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -108,7 +108,7 @@ jobs:
           - 5432:5432
     env:
       SQLX_VERSION: 0.6.2
-      SQLX_FEATURES: postgres
+      SQLX_FEATURES: postgres,runtime-tokio-rustls,migrate
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -164,7 +164,7 @@ jobs:
           - 5432:5432
     env:
       SQLX_VERSION: 0.6.2
-      SQLX_FEATURES: postgres
+      SQLX_FEATURES: postgres,runtime-tokio-rustls,migrate
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
