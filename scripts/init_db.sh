@@ -19,7 +19,7 @@ if ! [ -x "$(command -v sqlx)" ]; then
     exit 1
 fi
 
-if [[ "${SKIP_DOCKER}" ]]
+if [[ -z "${SKIP_DOCKER}" ]]
 then
 (docker stop zpostgres && docker rm zpostgres) || true
 
