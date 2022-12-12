@@ -19,6 +19,8 @@ if ! [ -x "$(command -v sqlx)" ]; then
     exit 1
 fi
 
+if [[ "${SKIP_DOCKER}" ]]
+then
 (docker stop zpostgres && docker rm zpostgres) || true
 
 docker run \
@@ -29,6 +31,7 @@ docker run \
     --name zpostgres \
     -d postgres \
     postgres -N 1000
+fi
 
 export PGPASSWORD="${DB_PASSWORD}"
 until psql -h "localhost" -U "${DB_USER}" -p "${DB_PORT}" -d postgres -c '\q'; do
