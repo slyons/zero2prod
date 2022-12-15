@@ -1,0 +1,12 @@
+@host=http://localhost:8000
+
+###
+
+GET {{host}}/health_check
+
+###
+
+POST {{host}}/subscriptions
+Content-Type: application/x-www-form-urlencoded
+
+name=le%20guin&email=ursula_le_guin%40gmail.com
